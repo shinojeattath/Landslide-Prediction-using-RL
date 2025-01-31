@@ -1,0 +1,47 @@
+{% load static from static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Micro+5&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rowdies:wght@300;400;700&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="loader-container">
+    <div class="loader"></div>
+    </div>
+    <div class="nav">
+        <div>
+            <div class="logo">Sector7</div>
+        </div>
+        <div>
+            <ul className="nav-links">
+                <li><a href="#about">About Our Team</a></li>
+              </ul>
+        </div>
+    </div>
+    <div class="hero">
+        <img src='{% static "2.png" %}' class="background-image">
+        <img src='{% static "3.png" %}' class="background-image">
+        <img src='{% static "1.png" %}' class="background-image">
+        <div class="content">
+          
+            <div class="content">
+                <h1>Landslide Prediction</h1>
+                <p>Project done by Team 7</p>
+                <span></span>
+                <div class="countdown">Next prediction in: <span id="timer">10</span>s</div>
+                <h1 id="result">Waiting for prediction...</h1>
+            </div>
+        </div>
+        <div>
+            <button onclick=evaluateLandslide() class="button">Predict</button>
+        </div>
+    </div>
+    
+    <script src="{% static 'script.js' %}">
+       
+    </script>
+</body> 
+</html>
