@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        :root {
+            --transition-time: 5s;
+            --hover-time: 0.3s;
+        }
+
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: "Rowdies", serif;
+            overflow: hidden;
+        }
+
+        .background-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(to bottom, #000033, #191970, #483D8B);
+            transition: background var(--transition-time) ease-in-out;
+        }
+
+        .login-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+            color: white;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .logo {
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            color: white;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        .input-group input {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-family: "Rowdies", serif;
+            font-size: 1rem;
+            transition: all var(--hover-time) ease;
+        }
+
+        .input-group input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .input-group input:focus {
+            outline: none;
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .login-button {
+            padding: 12px 32px;
+            font-size: 1.1rem;
+            font-family: "Rowdies", serif;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-weight: 500;
+            background-color: white;
+            color: #191970;
+            transition: all var(--hover-time) ease;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .login-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .forgot-password {
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color var(--hover-time) ease;
+        }
+
+        .forgot-password:hover {
+            color: white;
+        }
+
+        .register-link {
+            margin-top: 20px;
+            display: block;
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color var(--hover-time) ease;
+        }
+
+        .register-link:hover {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container"></div>
+    <div class="login-container">
+        <div class="logo">Sector7</div>
+        <form action="#" method="POST">
+            <div class="input-group">
+                <input type="email" placeholder="Email" required>
+            </div>
+            <div class="input-group">
+                <input type="password" placeholder="Password" required>
+            </div>
+            <button type="submit" class="login-button">Login</button>
+        </form>
+        <a href="#" class="forgot-password">Forgot Password?</a>
+        <a href="#" class="register-link">Don't have an account? Register</a>
+    </div>
+</body>
+</html>
