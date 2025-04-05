@@ -10,8 +10,8 @@ try:
         if ser.in_waiting > 0:  # Check if there is data available to read
             line = ser.readline().strip()  # Read the line and decode it
             #  value = int(line)  # Convert the string to an integer
-            print(f"Received value: {line}")  # Print the received value
+            print(f"Received value: {line}")  
 except KeyboardInterrupt:
     print("Program terminated")
 
-ser.close()  # Close the serial connectionpython 
+ser.close()  
