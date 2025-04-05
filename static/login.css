@@ -1,0 +1,89 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.background {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("./wallpaperflare.com_wallpaper.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.login-box {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 10px;
+    border: 1px solid white;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    width: 380px;
+    height: auto;
+    transition: all 0.5s ease-in-out;
+}
+
+input {
+    width: 90%;
+    padding: 10px;
+    margin: 10px 0;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid white;
+    color: white;
+    outline: none;
+    font-size: 16px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 40px;
+}
+
+button:hover {
+    background: #ddd;
+}
+
+.options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+#toggle-form{
+    color: rgb(223, 223, 223) ;
+    text-shadow: black;
+}
+
+#FP{
+    margin-left: 13px ;
+}
+
+/* Animation for form transition */
+.form-transition {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
