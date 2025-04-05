@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sensor Dashboard</title>
+  <link rel="stylesheet" href="values.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">SECTOR 7</div>
+    <nav class="nav-links">
+      <button>Home</button>
+      <button>About</button>
+      <button id="button1">Contact</button>
+    </nav>
+  </header>
+
+  <div class="heading-container">
+    <h1 class="page-heading">Sensor Dashboard</h1>
+    <div id="datetime" class="datetime"></div>
+  </div>
+
+  <main class="main-container">
+    <div class="left-section">
+      <div class="sensor-box">
+        <div class="sensor-title">TEMPERATURE</div>
+        <div class="sensor-value" id="temp">0 °C</div>
+        <div class="sensor-change" id="temp-change">+0% from avg</div>
+        <div class="sensor-name">DHT 22</div>
+      </div>
+      <div class="sensor-box">
+        <div class="sensor-title">HUMIDITY</div>
+        <div class="sensor-value" id="humidity">0 %</div>
+        <div class="sensor-change" id="humidity-change">+0% from avg</div>
+        <div class="sensor-name">DHT 22</div>
+      </div>
+      <div class="sensor-box">
+        <div class="sensor-title">SOIL MOISTURE</div>
+        <div class="sensor-value" id="soil">0</div>
+        <div class="sensor-change" id="soil-change">+0% from avg</div>
+        <div class="sensor-name">YL 69</div>
+      </div>
+      <div class="sensor-box">
+        <div class="sensor-title">RAIN</div>
+        <div class="sensor-value" id="rain">Low</div>
+        <div class="sensor-change" id="rain-change">-</div>
+        <div class="sensor-name">YL 83</div>
+      </div>
+      <div class="sensor-box">
+        <div class="sensor-title">ACCELERATION</div>
+        <div class="sensor-value" id="accel">X: 0 | Y: 0 | Z: 0</div>
+        <div class="sensor-change" id="accel-change">-</div>
+        <div class="sensor-name">ADXL 345</div>
+      </div>
+      <div class="sensor-box">
+        <div class="sensor-title">PRESSURE</div>
+        <div class="sensor-value" id="pressure">0 hPa</div>
+        <div class="sensor-change" id="pressure-change">+0% from avg</div>
+        <div class="sensor-name">BMP 180</div>
+      </div>
+    </div>
+
+    <div class="right-section">
+      <canvas id="sensorGraph"></canvas>
+    </div>
+  </main>
+
+  <script src="values.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</body>
+</html>
