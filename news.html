@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>News Showcase</title>
+  <link rel="stylesheet" href="news.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">📰 MyNews</div>
+    <div class="nav-buttons">
+      <button onclick="goHome()">⬅️ Back Home</button>
+      <button onclick="showInfo()">ℹ️ Info</button>
+    </div>
+  </div>
+
+  <!-- Main Layout -->
+  <div class="main">
+    <!-- Left Panel: Selected News -->
+    <div class="left" id="selectedNews">
+      <!-- Populated dynamically -->
+    </div>
+
+    <!-- Right Panel: News List + Form -->
+    <div class="right">
+      <h3>Other News</h3>
+      <div id="newsList"></div>
+
+      <!-- Add News Form -->
+      <div class="add-form" id="addForm">
+        <input type="text" id="titleInput" placeholder="Title" />
+        <textarea id="contentInput" placeholder="Content"></textarea>
+        <input type="text" id="imageInput" placeholder="Image URL" />
+        <button onclick="addNews()">Submit</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Add Button -->
+  <button class="add-news-btn" onclick="toggleForm()">+ Add News</button>
+
+  <script src="news.js"></script>
+</body>
+</html>
