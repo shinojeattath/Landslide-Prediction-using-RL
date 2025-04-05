@@ -1,102 +1,94 @@
-let featuredNews = {
-    title: "Tech Conference 2025 Announced",
-    content: "The global tech conference will be held in San Francisco, showcasing the latest innovations in AI, Robotics, and Quantum Computing.",
-    image: "https://via.placeholder.com/600x300/007bff/ffffff?text=Tech+Conference+2025"
+// Show or hide the add news form
+function toggleForm() {
+  const form = document.getElementById('addForm');
+  form.style.display = form.style.display === 'flex' ? 'none' : 'flex';
+}
+
+// Add news item
+function addNews() {
+  const title = document.getElementById('titleInput').value;
+  const content = document.getElementById('contentInput').value;
+  const imageUrl = document.getElementById('imageInput').value;
+
+  if (!title || !content || !imageUrl) {
+    alert("Please fill in all fields");
+    return;
+  }
+
+  const newsItem = {
+    title,
+    content,
+    image: imageUrl
   };
-  
-  let otherNews = [
-    {
-      title: "AI Revolution",
-      content: "AI is transforming industries worldwide with smart automation and predictive capabilities.",
-      image: "https://via.placeholder.com/600x300/ffcc00/000000?text=AI+Revolution"
-    },
-    {
-      title: "SpaceX Launch",
-      content: "SpaceX successfully launched its Starship prototype into orbit, marking a milestone in reusable rockets.",
-      image: "https://via.placeholder.com/600x300/66ccff/000000?text=SpaceX+Launch"
-    },
-    {
-      title: "Climate Action Summit",
-      content: "Leaders from over 100 countries gathered to discuss urgent actions to combat climate change.",
-      image: "https://via.placeholder.com/600x300/99cc99/000000?text=Climate+Summit"
-    },
-    {
-      title: "Global Markets Today",
-      content: "Stocks showed mixed results amid inflation concerns and tech sector volatility.",
-      image: "https://via.placeholder.com/600x300/ff6666/000000?text=Market+Update"
-    },
-    {
-      title: "Education Tech Boom",
-      content: "EdTech startups are seeing a surge in investment as remote learning becomes the norm.",
-      image: "https://via.placeholder.com/600x300/cc99ff/000000?text=EdTech+Boom"
-    }
-  ];
-  
-  function renderFeaturedNews() {
-    const left = document.getElementById("selectedNews");
-    left.innerHTML = `
-      <img src="${featuredNews.image}" class="news-image" alt="news"/>
-      <h2 class="news-title">${featuredNews.title}</h2>
-      <p>${featuredNews.content}</p>
-    `;
+
+  displayNews(newsItem);
+  addNewsToList(newsItem);
+
+  // Clear form fields
+  document.getElementById('titleInput').value = '';
+  document.getElementById('contentInput').value = '';
+  document.getElementById('imageInput').value = '';
+
+  toggleForm();
+}
+
+// Display news in the left panel
+function displayNews(news) {
+  const selectedNews = document.getElementById('selectedNews');
+  selectedNews.innerHTML = `
+    <img src="${news.image}" alt="News Image" class="news-image" />
+    <h2 class="news-title">${news.title}</h2>
+    <p>${news.content}</p>
+  `;
+}
+
+// Add news to the right-side list
+function addNewsToList(news) {
+  const newsList = document.getElementById('newsList');
+  const item = document.createElement('div');
+  item.className = 'news-item';
+  item.innerHTML = `
+    <img src="${news.image}" alt="News Image" class="news-image" style="margin-bottom: 8px;" />
+    <strong>${news.title}</strong>
+  `;
+  item.onclick = () => displayNews(news);
+  newsList.appendChild(item);
+}
+
+// Dummy news items
+const dummyNews = [
+  {
+    title: "Tech Conference 2025 Announced",
+    content: "The annual global tech conference will take place in San Francisco, featuring keynote speakers from major tech firms.",
+    image: "https://images.unsplash.com/photo-1741986947217-d1a0ecc39149?q=80&w=2066&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    title: "New Species Discovered",
+    content: "Scientists have discovered a new species of frog in the Amazon rainforest that glows under UV light.",
+    image: "https://images.unsplash.com/photo-1741986947217-d1a0ecc39149?q=80&w=2066&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+  },
+  {
+    title: "Local Art Festival Kicks Off",
+    content: "The city square is buzzing with colors as artists from around the world showcase their talent during the 3-day art fest.",
+    image: "https://images.unsplash.com/photo-1741986947217-d1a0ecc39149?q=80&w=2066&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
   }
-  
-  function renderNewsList() {
-    const list = document.getElementById("newsList");
-    list.innerHTML = "";
-  
-    otherNews.forEach((news, index) => {
-      const item = document.createElement("div");
-      item.className = "news-item";
-      item.textContent = news.title;
-      item.onclick = () => swapNews(index);
-      list.appendChild(item);
-    });
-  }
-  
-  function swapNews(index) {
-    const selected = otherNews[index];
-    otherNews[index] = featuredNews;
-    featuredNews = selected;
-    renderFeaturedNews();
-    renderNewsList();
-  }
-  
-  function toggleForm() {
-    const form = document.getElementById("addForm");
-    form.style.display = form.style.display === "flex" ? "none" : "flex";
-  }
-  
-  function addNews() {
-    const title = document.getElementById("titleInput").value.trim();
-    const content = document.getElementById("contentInput").value.trim();
-    const image = document.getElementById("imageInput").value.trim();
-  
-    if (!title || !content || !image) {
-      alert("Please fill all fields!");
-      return;
-    }
-  
-    otherNews.push({ title, content, image });
-  
-    // Reset form
-    document.getElementById("titleInput").value = "";
-    document.getElementById("contentInput").value = "";
-    document.getElementById("imageInput").value = "";
-  
-    toggleForm();
-    renderNewsList();
-  }
-  
-  function goHome() {
-    alert("Redirecting to homepage...");
-  }
-  
-  function showInfo() {
-    alert("This is a simple news showcase app. Click on a headline to view the full article.");
-  }
-  
-  // Initialize
-  renderFeaturedNews();
-  renderNewsList();
-  
+];
+
+// Load dummy news on page load
+window.onload = function () {
+  dummyNews.forEach(news => {
+    addNewsToList(news);
+  });
+
+  // Show the first news by default
+  displayNews(dummyNews[0]);
+};
+
+// Optional: Navbar button actions
+function goHome() {
+  alert("Going back to home!");
+}
+
+function showInfo() {
+  alert("This is a simple news showcase app.");
+}
