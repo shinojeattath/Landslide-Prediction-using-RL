@@ -34,7 +34,6 @@ def mainFunction():
     if action == 1:
         print("Landslide predicted.", timestamp)
         #views.send_mail()
-        # views.send_mail()
     else:
         print(f"No landslide predicted. {timestamp}")
     return "Warning! Possible Landslide" if action == 1 else "Terrain is Stable..!"

@@ -12,8 +12,8 @@
     <div class="logo">SECTOR 7</div>
     <nav class="nav-links">
       <button onclick="callHome()">Home</button>
-      <button onclick="callAnalysis()">Landslide Analysis</button>
-      <button id="button1">Contact</button>
+      <button onclick="callArticles()">Articles</button>
+      <button onclick="callProfile()" id="button1">Profile</button>
     </nav>
   </header>
 
@@ -68,9 +68,19 @@
   </main>
 
   <script>
-  function callHome(){
-      console.log("home Pressed")
+    function callHome() {
+      console.log("Home Pressed");
       window.location.href = "{% url 'homepage' %}";
+    }
+
+    function callArticles() {
+      console.log("Article Pressed");
+      window.location.href = "{% url 'news' %}";
+    }
+
+    function callProfile() {
+      console.log("Profile Pressed");
+      window.location.href = "{% url 'profile' %}";
     }
   </script>
   <script src="{% static 'values.js' %}"></script>
