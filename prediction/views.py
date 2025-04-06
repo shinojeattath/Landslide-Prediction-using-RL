@@ -94,20 +94,20 @@ def user_signup(request):
             messages.success(request, f'Account created for {username}!')
             return redirect('login')
         
-# def report_activity(request):
-#     if request.method == 'POST':
-#         activity_type = request.POST.get('activity_type')
-#         description = request.POST.get('description')
-#         location = request.POST.get('location')
+def report_activity(request):
+    if request.method == 'POST':
+        activity_type = request.POST.get('activity_type')
+        description = request.POST.get('description')
+        location = request.POST.get('location')
 
-#         UnusualActivity.objects.create(
-#             user=request.user,
-#             activity_type=activity_type,
-#             description=description,
-#             location=location
-#         )
-#         return redirect('home')
-#     return render(request, 'report_activity.html')
+        UnusualActivity.objects.create(
+            user=request.user,
+            activity_type=activity_type,
+            description=description,
+            location=location
+        )
+        return redirect('home')
+    return render(request, 'report_activity.html')
 
 def user_dashboard(request):
     return render(request, 'user_dashboard.html')
