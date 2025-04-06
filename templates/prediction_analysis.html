@@ -1,17 +1,18 @@
+{% load static from static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sensor Dashboard</title>
-  <link rel="stylesheet" href="values.css" />
+  <link rel="stylesheet" href="{% static 'values.css' %}" />
 </head>
 <body>
   <header class="navbar">
     <div class="logo">SECTOR 7</div>
     <nav class="nav-links">
-      <button>Home</button>
-      <button>About</button>
+      <button onclick="callHome()">Home</button>
+      <button onclick="callAnalysis()">Landslide Analysis</button>
       <button id="button1">Contact</button>
     </nav>
   </header>
@@ -66,7 +67,13 @@
     </div>
   </main>
 
-  <script src="values.js"></script>
+  <script>
+  function callHome(){
+      console.log("home Pressed")
+      window.location.href = "{% url 'homepage' %}";
+    }
+  </script>
+  <script src="{% static 'values.js' %}"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 </html>
