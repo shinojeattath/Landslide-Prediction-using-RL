@@ -21,8 +21,11 @@
     <div class="hero-content">
       <h1>Landslide Prediction</h1>
       <p>Leveraging reinforcement learning to anticipate unpredictable landslides across India,<br>penhancing early warnings and disaster preparedness.</p>
-      <button class="cta-button">Get Started</button>
+      <h1 id="result">Waiting for prediction...</h1>
+      <button class="cta-button" onclick=evaluateLandslide()>Predict</button>
+
     </div>
   </section>
+  <script src="{% static 'script.js' %}"></script>
 </body>
 </html>

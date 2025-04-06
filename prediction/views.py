@@ -21,6 +21,7 @@ def homepage(request):
        # return redirect('homepage')
     return render(request, 'index2.html')
 
+
 def user_login(request):
     if request.method == "POST":
         username = request.POST["email"]
@@ -46,11 +47,11 @@ def callEvaluate(request):
 
 def send_mail():
 
-    sender_email = "spinxx360@gmail.com"  
-    sender_password = "vmog qjgr ahso tzpz" 
-    recipient_emails = ["em.shinojeattath5112@gmail.com"]  # Add recipient emails
+    sender_email = "minimol.project@gmail.com"  
+    sender_password = "qkkf cwxy czce btps" 
+    recipient_emails = ["em.shinojeattath5112@gmail.com","anzilta08@gmail.com","diyaelfadhilph@gmail.com"] 
     subject = "Test Email from Me"
-    body = "Hello,\n\nThis is a test email sent using My code.\n\nBest regards,\nDEF"
+    body = "Warning there is a possible landslide in your area."
 
     smtp_server = "smtp.gmail.com" 
     smtp_port = 587 
@@ -93,17 +94,20 @@ def user_signup(request):
             messages.success(request, f'Account created for {username}!')
             return redirect('login')
         
-def report_activity(request):
-    if request.method == 'POST':
-        activity_type = request.POST.get('activity_type')
-        description = request.POST.get('description')
-        location = request.POST.get('location')
+# def report_activity(request):
+#     if request.method == 'POST':
+#         activity_type = request.POST.get('activity_type')
+#         description = request.POST.get('description')
+#         location = request.POST.get('location')
 
-        UnusualActivity.objects.create(
-            user=request.user,
-            activity_type=activity_type,
-            description=description,
-            location=location
-        )
-        return redirect('home')
-    return render(request, 'report_activity.html')
+#         UnusualActivity.objects.create(
+#             user=request.user,
+#             activity_type=activity_type,
+#             description=description,
+#             location=location
+#         )
+#         return redirect('home')
+#     return render(request, 'report_activity.html')
+
+def user_dashboard(request):
+    return render(request, 'user_dashboard.html')
