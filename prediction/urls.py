@@ -9,6 +9,8 @@ urlpatterns = [
     path('news', views.news, name='news'),
    # path('report_activity', views.report_activity, name="report_activity"),
     path('user_dashboard', views.user_dashboard, name='user_dashboard'),
+    path('prediction_analysis', views.prediction_analysis, name='prediction_analysis'),
+    path('api/sensor-data/', views.get_latest_sensor_data, name='sensor_data'),
 
 
 ]
