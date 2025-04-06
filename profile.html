@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile Dashboard</title>
+  <link rel="stylesheet" href="profile.css" />
+</head>
+<body>
+
+  <div class="header">
+    <div>
+      <h2>My Profile</h2>
+    </div>
+    <div>
+        <a href="index.html" class="home-link">Home</a>
+    </div>
+  </div>
+
+  <div class="dashboard">
+    <!-- Left Column: Profile -->
+    <div class="left-column">
+      <div class="profile-box">
+        <div class="overlay"></div>
+        <div class="profile-content">
+            <form class="edit-form">
+                <div>
+                  <label for="name">Name:</label>
+                  <input type="text" id="name" value="Sami Rahman" />
+                </div>
+                <div>
+                  <label for="phone">Phone:</label>
+                  <input type="tel" id="phone" value="+1 856-589-1236" />
+                </div>
+                <div>
+                  <label for="email">Email:</label>
+                  <input type="email" id="email" value="sami.rahman@gmail.com" />
+                </div>
+                <div>
+                  <label for="alerts">SMS Alerts:</label>
+                  <select id="alerts">
+                    <option selected>Activated</option>
+                    <option>Deactivated</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn">Save</button>
+              </form>
+              
+        </div>
+      </div>
+    </div>
+
+    <!-- Right Column -->
+    <div class="right-column">
+        <div class="card">
+            <h3>ALERT WARNING</h3>
+          
+            <p><strong>Select Location:</strong></p>
+            <select class="location-dropdown">
+              <option value="home">Home</option>
+              <option value="office">Office</option>
+              <option value="school">School</option>
+              <option value="other">Other</option>
+            </select>
+          
+            <div class="alert-actions">
+              <button class="btn alert">Send Alert</button>
+              <button class="btn emergency">Emergency Call</button>
+            </div>
+          </div>
+
+      <div class="card">
+        <h3>My Articles</h3>
+        <div class="articles-grid">
+            <div class="article-box" style="background-image: url('./assets/pic.jpg');">
+                <div class="article-overlay">
+                  <h4>Understanding Crypto Wallets</h4>
+                  <p>A beginner's guide to digital wallets and security tips.</p>
+                </div>
+            </div>
+            <div class="article-box" style="background-image: url('./assets/pic.jpg');">
+                <div class="article-overlay">
+                  <h4>Understanding Crypto Wallets</h4>
+                  <p>A beginner's guide to digital wallets and security tips.</p>
+                </div>
+            </div>
+            <div class="article-box" style="background-image: url('./assets/pic.jpg');">
+                <div class="article-overlay">
+                  <h4>Understanding Crypto Wallets</h4>
+                  <p>A beginner's guide to digital wallets and security tips.</p>
+                </div>
+            </div>
+            <div class="article-box" style="background-image: url('./assets/pic.jpg');">
+                <div class="article-overlay">
+                  <h4>Understanding Crypto Wallets</h4>
+                  <p>A beginner's guide to digital wallets and security tips.</p>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
