@@ -12,8 +12,8 @@
     <div class="logo">SECTOR 7</div>
     <nav class="nav-links">
       <button onclick="callHome()">Home</button>
-      <button>About</button>
-      <button id="button1">Contact</button>
+      <button onclick="callArticles()" >Articles</button>
+      <button onclick="callProfile()" id="button1">Profile</button>
     </nav>
   </header>
 
@@ -22,16 +22,33 @@
       <h1>Landslide Prediction</h1>
       <p>Leveraging reinforcement learning to anticipate unpredictable landslides across India,<br>penhancing early warnings and disaster preparedness.</p>
       <h1 id="result">Waiting for prediction...</h1>
-      <button class="cta-button" onclick=evaluateLandslide()>Predict</button>
+      <button class="cta-button" onclick="callValues()">Predict</button>
 
     </div>
   </section>
-  <script src="{% static 'script.js' %}">
-    function callHome(){
-      console.log("home Pressed")
+  <script src="{% static 'script.js' %}"></script>
+
+  <!-- Inline JS (for navigation) -->
+  <script>
+    function callHome() {
+      console.log("Home Pressed");
       window.location.href = "{% url 'homepage' %}";
     }
-  
+
+    function callValues() {
+      console.log("Readings Pressed");
+      window.location.href = "{% url 'prediction_analysis' %}";
+    }
+
+    function callArticles() {
+      console.log("Article Pressed");
+      window.location.href = "{% url 'news' %}";
+    }
+
+    function callProfile() {
+      console.log("Profile Pressed");
+      window.location.href = "{% url 'profile' %}";
+    }
   </script>
 </body>
 </html>

@@ -20,7 +20,7 @@
   
   .left-panel {
     flex: 1;
-    background: url('./assets/bg.jpg') no-repeat center center/cover;
+    background: url('./bg.jpg') no-repeat center center/cover;
     filter: grayscale(100%);
     position: relative;
     height: 97vh;
