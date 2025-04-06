@@ -11,7 +11,7 @@
   <header class="navbar">
     <div class="logo">SECTOR 7</div>
     <nav class="nav-links">
-      <button>Home</button>
+      <button onclick="callHome()">Home</button>
       <button>About</button>
       <button id="button1">Contact</button>
     </nav>
@@ -26,6 +26,12 @@
 
     </div>
   </section>
-  <script src="{% static 'script.js' %}"></script>
+  <script src="{% static 'script.js' %}">
+    function callHome(){
+      console.log("home Pressed")
+      window.location.href = "{% url 'homepage' %}";
+    }
+  
+  </script>
 </body>
 </html>

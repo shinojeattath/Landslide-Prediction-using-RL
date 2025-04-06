@@ -19,3 +19,21 @@ class UserRegister(models.Model):
 
     def __str__(self):
         return self.Username
+    
+class SensorReading(models.Model):
+    """Model to store sensor readings"""
+    temperature = models.FloatField()
+    humidity = models.FloatField()
+    pressure = models.FloatField()
+    altitude = models.FloatField()
+    accel_x = models.FloatField()
+    accel_y = models.FloatField()
+    accel_z = models.FloatField()
+    soil_moisture = models.IntegerField()
+    slope = models.FloatField()
+    aspect = models.FloatField()
+    risk_level = models.IntegerField()  # 0: stable, 1: risk
+    timestamp = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return f"Reading at {self.timestamp}"
