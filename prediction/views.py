@@ -32,7 +32,7 @@ def user_login(request):
             login(request, user)
             print("Logged in")
             messages.success(request, "Login successful!")
-            return HttpResponse("logged in")
+            return redirect('user_dashboard')
         else:
             messages.error(request, "Invalid username or password.")
     
