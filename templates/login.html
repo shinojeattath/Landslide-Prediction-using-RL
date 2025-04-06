@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
     <link rel="stylesheet" href="{% static 'login.css' %}">
-    <script defer src="{% static 'login.js' %}"></script>
 </head>
 <body>
     <div class="background">
@@ -19,11 +18,17 @@
                 <div class="options">
                     <a id="FP" href="#">Forget Password</a>
                 </div>
-                <button type="submit">Log in</button>
-
+                <a href="{% url 'profile' %}">Log in</a>
+                <button type="submit"><a href="{% url 'profile' %}">Log in</a></button>
             </form>
             <p id="toggle-form">Don't have an account? <a href="#" id="toggle-btn">Register</a></p>
         </div>
     </div>
+
 </body>
+<script>
+    function buttonClicked(){
+        console.log("clicked")
+    }
+</script>
 </html>

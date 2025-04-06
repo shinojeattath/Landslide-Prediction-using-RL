@@ -308,6 +308,7 @@ def user_login(request):
     if request.method == "POST":
         username = request.POST["email"]
         password = request.POST["password"]
+        print("entered login view")
         user = authenticate(request, username=username, password=password)
         print("autenticated")
         
@@ -315,7 +316,7 @@ def user_login(request):
             login(request, user)
             print("Logged in")
             messages.success(request, "Login successful!")
-            return redirect('user_dashboard')
+            return redirect('profile')
         else:
             messages.error(request, "Invalid username or password.")
     
@@ -400,17 +401,14 @@ def prediction_analysis(request):
 
 def profile(request):
     return render(request, 'profile.html')
-def register(request):
-    return render(request, 'register.html') 
-
-
 
 def register_view(request):
     if request.method == 'POST':
         Firstname=request.POST['Firstname']
         Lastname=request.POST['Lastname']
         Username = request.POST['Username']
-        Email= request.POST['Email']
+        Email= request.POST['email']
+        Password=request.POST['Password']
         if User.objects.filter(username=Username).exists():
         
             messages.error(request, "Username already taken!")
@@ -420,8 +418,16 @@ def register_view(request):
             messages.error(request, "Email already registered!")
             return redirect('register')
 
-        user = User.objects.create_user(Username=Username, Email=Email, Firstname=Firstname,Lastname=Lastname)
+        user = User.objects.create_user(Username, Email, Password)
         user.save()
+        UserRegister.objects.create(
+            Firstname=Firstname,
+            Lastname=Lastname,
+            Username=Username,
+            Email=Email,
+
+        )
+
 
         messages.success(request, "Registration successful! You can now log in.")
         return redirect('login')  # Make sure you have a login URL defined

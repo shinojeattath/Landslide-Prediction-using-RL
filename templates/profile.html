@@ -27,15 +27,15 @@
             <form class="edit-form">
                 <div>
                   <label for="name">Name:</label>
-                  <input type="text" id="name" value="Sami Rahman" />
+                  <input type="text" id="name" value={{user.username}} />
                 </div>
-                <div>
+                <!-- <div>
                   <label for="phone">Phone:</label>
                   <input type="tel" id="phone" value="+1 856-589-1236" />
-                </div>
+                </div> -->
                 <div>
                   <label for="email">Email:</label>
-                  <input type="email" id="email" value="sami.rahman@gmail.com" />
+                  <input type="email" id="email" value={{user.email}} />
                 </div>
                 <div>
                   <label for="alerts">SMS Alerts:</label>
