@@ -3,8 +3,8 @@ import numpy as np
 import os
 import tensorflow as tf
 from sklearn.preprocessing import MinMaxScaler
-from .landslide_env import LandslideEnv
-from .dqn_agent import DQNAgent
+from landslide_env import LandslideEnv
+from dqn_agent import DQNAgent
 
 # Define serial port (update accordingly)
 SERIAL_PORT = 'COM7'

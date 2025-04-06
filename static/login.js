@@ -15,26 +15,26 @@ document.addEventListener("DOMContentLoaded", function () {
                 // Switch to Register form
                 formTitle.innerText = "Register";
                 authForm.innerHTML = `
-                    <input type="text" placeholder="Full Name" required>
-                    <input type="email" placeholder="Email" required>
-                    <input type="password" placeholder="Password" required>
-                    <button type="submit">Sign Up</button>
-                `;
+    {{ form.as_p }}
+        <button type="submit">Sign Up</button>
+`;
+
                 toggleText.innerHTML = `Already have an account? <a href="#" id="toggle-btn">Login</a>`;
             } else {
                 // Switch back to Login form
                 formTitle.innerText = "Login";
                 authForm.innerHTML = `
-                    <input type="email" id="email" placeholder="Email" required>
-                    <input type="password" id="password" placeholder="Password" required>
-                    <div class="options">
-                        <label>
-                            <input type="checkbox"> Remember Me
-                        </label>
-                        <a href="#">Forget Password</a>
-                    </div>
-                    <button type="submit">Log in</button>
-                `;
+    <input type="text" id="email" placeholder="Email" name="email" required>
+    <input type="password" id="password" placeholder="Password" name="password" required>
+    <div class="options">
+        <label>
+            <input type="checkbox"> Remember Me
+        </label>
+        <a href="#">Forget Password</a>
+    </div>
+    <button type="submit">Log in</button>
+`;
+
                 toggleText.innerHTML = `Don't have an account? <a href="#" id="toggle-btn">Register</a>`;
             }
 

@@ -1,10 +1,11 @@
+{% load static from static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Dark News Showcase</title>
-  <link rel="stylesheet" href="news.css" />
+  <title>News Showcase</title>
+  <link rel="stylesheet" href="{% static 'news.css' %}" />
 </head>
 <body>
 
@@ -34,6 +35,9 @@
     <button onclick="addNews()">Add News</button>
   </div>
 
-  <script src="news.js"></script>
+  <!-- Floating Add Button -->
+  <button class="add-news-btn" onclick="toggleForm()">+ Add News</button>
+
+  <script src="{% static 'news.js' %}"></script>
 </body>
 </html>

@@ -84,7 +84,7 @@
         rgba(0, 0, 0, 0.264), 
         rgba(0, 0, 0, 0.264)
       ),
-      url('./assets/bg.jpg') no-repeat center center / cover;
+      url('./bg.jpg') no-repeat center center / cover;
     filter: grayscale(100%) blur(1px);
     z-index: -1;
   }
