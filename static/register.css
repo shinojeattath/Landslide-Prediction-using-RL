@@ -20,8 +20,8 @@
   
   .left-panel {
     flex: 1;
-    background: url('./bg.jpg') no-repeat center center/cover;
-    filter: grayscale(100%);
+    background: url('./login.jpg') no-repeat center center/cover;
+    filter: grayscale(90%);
     position: relative;
     height: 97vh;
     margin-top: 10px;
