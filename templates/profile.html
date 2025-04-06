@@ -13,10 +13,13 @@
     <div>
       <h2>My Profile</h2>
     </div>
-    <div>
-        <a href="index.html" class="home-link">Home</a>
+    <div class="home-link">
+      <a onclick="callHome()">HOME</a>
+      <a onclick="callValues()">READINGS</a>
+      <a onclick="callLogin()">LOGIN</a>
     </div>
   </div>
+  
 
   <div class="dashboard">
     <!-- Left Column: Profile -->
@@ -102,5 +105,21 @@
     </div>
   </div>
 
+  <script>
+    function callHome() {
+      console.log("Home Pressed");
+      window.location.href = "{% url 'homepage' %}";
+    }
+
+    function callLogin() {
+      console.log("Login Pressed");
+      window.location.href = "{% url 'login' %}";
+    }
+
+    function callValues() {
+      console.log("Readings Pressed");
+      window.location.href = "{% url 'prediction_analysis' %}";
+    }
+  </script>
 </body>
 </html>

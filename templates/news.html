@@ -10,10 +10,10 @@
 <body>
 
   <div class="navbar">
-    <div class="logo">NEWS</div>
+    <div class="logo">SECTOR7</div>
     <div class="nav-links">
-      <button id="button1" onclick="goHome()">Home</button>
-      <button onclick="showInfo()">Info</button>
+      <button id="button1" onclick="callHome()">Home</button>
+      <button onclick="callProfile()">Profile</button>
       <button onclick="toggleForm()">Add News</button>
     </div>
   </div>
@@ -35,5 +35,17 @@
     <button onclick="addNews()">Add News</button>
   </div>
   <script src="{% static 'news.js' %}"></script>
+
+  <script>
+    function callHome() {
+      console.log("Home Pressed");
+      window.location.href = "{% url 'homepage' %}";
+    }
+
+    function callProfile() {
+      console.log("Profile Pressed");
+      window.location.href = "{% url 'profile' %}";
+    }
+  </script>
 </body>
 </html>
