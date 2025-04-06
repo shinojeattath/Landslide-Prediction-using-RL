@@ -110,8 +110,8 @@ def report_activity(request):
         return redirect('home')
     return render(request, 'report_activity.html')
 
-def user_dashboard(request):
-    return render(request, 'user_dashboard.html')
+def profile(request):
+    return render(request, 'profile.html')
 def register(request):
     return render(request, 'register.html') 
 
