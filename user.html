@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>User Profile Page</title>
+  <link rel="stylesheet" href="user.css" />
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-links">
+          <button id="button1">Home</button>
+          <button>Articles</button>
+          <button>Settings</button>
+        </div>
+        <div class="user-icon">
+          <img src="./assets/1.png" alt="User" />
+        </div>
+    </header>
+
+  <main class="container">
+    <section class="profile-section">
+      <div class="profile-image">
+        <img src="./assets/1.png " alt="User" />
+      </div>
+      <div class="profile-details">
+        <form id="userForm">
+          <label>
+                Name:
+            <input type="text" id="name" value="Sami Rahman" disabled />
+          </label><br />
+          <label>
+                Email:
+            <input type="email" id="email" value="sami@example.com" disabled />
+          </label><br />
+          <label>
+                Phone:
+            <input type="tel" id="phone" value="+1 555-123-4567" disabled />
+          </label><br />
+          <button type="button" id="editBtn">Edit Info</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="articles-section">
+      <h2>My Articles</h2>
+      <div class="articles-grid">
+        <div class="article-card">
+          <img src="./assets/1.png" alt="Article 1" />
+          <h3>Heading One</h3>
+        </div>
+        <div class="article-card">
+          <img src="./assets/1.png" alt="Article 2" />
+          <h3>Heading Two</h3>
+        </div>
+        <div class="article-card">
+          <img src="https://via.placeholder.com/300x180" alt="Article 3" />
+          <h3>Heading Three</h3>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>
+    const editBtn = document.getElementById('editBtn');
+    const inputs = document.querySelectorAll('#userForm input');
+    let editing = false;
+  
+    editBtn.addEventListener('click', () => {
+      editing = !editing;
+      inputs.forEach(input => input.disabled = !editing);
+      editBtn.textContent = editing ? 'Save' : 'Edit Info';
+      
+      // Optional: Save to localStorage or show confirmation here
+    });
+  </script>
+</body>
+</html>
