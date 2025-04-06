@@ -11,3 +11,29 @@ class UnusualActivity(models.Model):
 
     def __str__(self):
         return f"{self.activity_type} reported at {self.location}"
+class UserRegister(models.Model):
+    Firstname = models.CharField(max_length=50)
+    Lastname = models.CharField(max_length=50)
+    Username = models.CharField(max_length=50, unique=True)
+    Email = models.EmailField(unique=True)
+
+    def __str__(self):
+        return self.Username
+    
+class SensorReading(models.Model):
+    """Model to store sensor readings"""
+    temperature = models.FloatField()
+    humidity = models.FloatField()
+    pressure = models.FloatField()
+    altitude = models.FloatField()
+    accel_x = models.FloatField()
+    accel_y = models.FloatField()
+    accel_z = models.FloatField()
+    soil_moisture = models.IntegerField()
+    slope = models.FloatField()
+    aspect = models.FloatField()
+    risk_level = models.IntegerField()  # 0: stable, 1: risk
+    timestamp = models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return f"Reading at {self.timestamp}"

@@ -33,7 +33,7 @@ def mainFunction():
     timestamp = time.strftime('%Y-%m-%d %H:%M:%S')
     if action == 1:
         print("Landslide predicted.", timestamp)
-        # views.send_mail()
+        #views.send_mail()
     else:
         print(f"No landslide predicted. {timestamp}")
     return "Warning! Possible Landslide" if action == 1 else "Terrain is Stable..!"
