@@ -1,8 +1,9 @@
 from time import sleep
 from django.http import HttpResponse, JsonResponse
 from django.shortcuts import render, redirect
-from .models import UnusualActivity
+from .models import UnusualActivity , UserRegister
 from . import evaluate_dqn
+from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
@@ -37,7 +38,7 @@ def user_login(request):
         else:
             messages.error(request, "Invalid username or password.")
     
-    return render(request, "login.html")
+    return render(request, "signin.html")
 
 def callEvaluate(request):
     result = evaluate_dqn.mainFunction()
@@ -111,3 +112,30 @@ def report_activity(request):
 
 def user_dashboard(request):
     return render(request, 'user_dashboard.html')
+def register(request):
+    return render(request, 'register.html') 
+
+
+
+def register_view(request):
+    if request.method == 'POST':
+        Firstname=request.POST['Firstname']
+        Lastname=request.POST['Lastname']
+        Username = request.POST['Username']
+        Email= request.POST['Email']
+        if User.objects.filter(username=Username).exists():
+        
+            messages.error(request, "Username already taken!")
+            return redirect('register')
+
+        if User.objects.filter(email=Email).exists():
+            messages.error(request, "Email already registered!")
+            return redirect('register')
+
+        user = User.objects.create_user(Username=Username, Email=Email, Firstname=Firstname,Lastname=Lastname)
+        user.save()
+
+        messages.success(request, "Registration successful! You can now log in.")
+        return redirect('login')  # Make sure you have a login URL defined
+
+    return render(request, 'register.html')

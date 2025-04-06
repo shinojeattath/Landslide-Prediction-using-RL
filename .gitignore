@@ -1,5 +1,11 @@
 db.sqlite3
 /__pycache__/
+<<<<<<< HEAD
 *.pyc
 *.pyo
 *.pyd
+=======
+*.__pycache__
+*.pyo
+*.pyc
+>>>>>>> 42875ea9b990c9bd8b37070e7cb0dd87834e449e
