@@ -96,6 +96,10 @@
     color: rgb(255, 255, 255);
   }
   
+  .hero-content h2{
+    color: rgba(227, 227, 1, 0.773);
+  }
+
   .hero-content h1 {
     font-size: 7em;
     margin-bottom: 10px;
@@ -122,6 +126,7 @@
     border-radius: 50px;
     cursor: pointer;
     transition: background 0.3s;
+    margin-top: 20px;
   }
   
   .cta-button:hover {

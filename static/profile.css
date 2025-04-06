@@ -42,10 +42,12 @@ body {
   text-decoration: none;
   font-weight: 600;
   transition: color 0.3s;
+  cursor: pointer;
 }
 
 .home-link a:hover {
   color: #7a5cf2;
+  cursor: pointer;
 }
 
 
